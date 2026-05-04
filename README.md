@@ -1,2 +1,2 @@
 ## Live Site
-[View the live site here](https://NickBalint.github.io/comp-484-project4)
+[View the live site here](https://NickBalint.github.io/comp484-project4)
