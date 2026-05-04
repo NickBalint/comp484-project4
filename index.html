@@ -32,8 +32,20 @@
                     <div class="timer">00:00:00</div>
                 </section>
 
+                <section class="live-stats" aria-label="Live typing stats">
+                    <p>WPM: <span id="wpm">0</span></p>
+                    <p>Errors: <span id="errors">0</span></p>
+                </section>
+
                 <button id="reset">Start over</button>
             </div><!-- .meta -->
+
+            <section class="high-scores" aria-label="Top three fastest scores">
+                <h2>Top 3 Fastest Scores</h2>
+                <ol id="scores-list">
+                    <li>No scores yet.</li>
+                </ol>
+            </section>
         </section><!-- .test-area -->
     </main>
 
