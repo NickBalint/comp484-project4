@@ -1,5 +1,5 @@
 ## Live Site
-[View the live site here](https://nickbalint.github.io/Comp484-project4/)
+[View the live site here](https://nickbalint.github.io/comp484-project4/)
 
 ## Presentation Cheat Sheet
 
