@@ -167,6 +167,8 @@ function chooseRandomParagraph() {
 // Match the text entered with the provided text on the page:
 function spellCheck() {
 	const textEntered = testArea.value;
+	// PRESENTATION: Compare only the typed-length slice of the target text.
+	// This lets us validate "correct so far" without requiring full completion yet.
 	const textMatch = activeOriginText.substring(0, textEntered.length);
 
 	wpmDisplay.textContent = String(calculateWpm(textEntered.length));
@@ -178,10 +180,12 @@ function spellCheck() {
 		testWrapper.style.borderColor = "#429890";
 		recordScore();
 	} else if (textEntered === textMatch) {
+		// PRESENTATION: Exact match with substring means current input is correct.
 		// Blue means current input is correct so far.
 		testWrapper.style.borderColor = "#65ccf3";
 		hasActiveMismatch = false;
 	} else {
+		// PRESENTATION: Any mismatch against substring indicates a typo right now.
 		// Orange means a typo exists in the current input.
 		testWrapper.style.borderColor = "#E95D0F";
 
@@ -199,6 +203,8 @@ function spellCheck() {
 function start() {
 	const textEnteredLength = testArea.value.length;
 
+	// PRESENTATION: This guard prevents timer stacking.
+	// We start the interval only once, at the first character, when not already running.
 	if (textEnteredLength === 0 && !timerRunning) {
 		timerRunning = true;
 		interval = setInterval(runTimer, 10);
